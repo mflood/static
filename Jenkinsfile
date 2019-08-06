@@ -7,6 +7,7 @@ pipeline {
         tidy -q -e *.html     
         '''
       }
+    }
     stage('Upload to AWS') {
       steps {
         withAWS(credentials:'aws-static') {
