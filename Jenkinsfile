@@ -4,7 +4,7 @@ pipeline {
     stage('Upload to AWS') {
       steps {
         withAWS(credentials:'aws-static') {
-              s3Upload(bucket: 'mflood-udacity-static', workingDir:'build', includePathPattern:'**/*');
+              s3Upload(file:'file.txt', bucket:'my-bucket', path:'index.html');
             }
       }
     }
